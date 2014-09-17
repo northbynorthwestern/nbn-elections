@@ -1,8 +1,18 @@
+{% load staticfiles %}
+
 <html>
 <head></head>
 <body>
+	<header class="masthead">
+		<img src="{% static 'img/nbn-logo.png' %}" alt="">
+	</header>
+	<header class="banner"></header>
+
+	<div class="content-wrapper">
+		{% block content %}{% endblock %}
+	</div>
 	
-	{% block content %}{% endblock %}
+	<footer></footer>
 
 </body>
 </html>
