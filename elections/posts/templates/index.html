@@ -2,13 +2,16 @@
 
 {% block content %}
 
+{% include "includes/main_polls.html" %}
+
+<div class="posts">
 {% for post in posts %}
 	<article>
 		<header>
 			<h3><a href="">{{ post.title }}</a></h3>
 			<p class="meta">
 			{% if post.author.all|length >= 1 %}
-				<span class="date">{{ post.posted_datetime }}</span> | 
+				<span class="date">{{ post.posted_datetime }}</span> |
 				<span class="authors">
 				{% for author in post.author.all %}
 					{{ author.name }}
@@ -24,5 +27,6 @@
 		</section>
 	</article>
 {% endfor %}
+</div>
 
 {% endblock %}

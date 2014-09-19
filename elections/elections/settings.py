@@ -36,7 +36,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #tools
+    # 'tinymce',
+
+    #apps
     'posts',
+
+    #local
     'debug_toolbar',
 )
 
@@ -83,3 +90,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# TinyMCE Setup
+# TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tinymce/tinymce.min.js")
+# TINYMCE_DEFAULT_CONFIG = {
+#     'plugins': "table,spellchecker,paste,searchreplace",
+#     'theme': "advanced",
+#     'cleanup_on_startup': True,
+#     'custom_undo_redo_levels': 10,
+# }
+

@@ -5,7 +5,10 @@ from django.template import RequestContext, loader
 from posts.models import Post, Author
 
 def index(request):
-    posts = Post.objects.all()
+    posts = (Post.objects.all()
+            .filter(status='p')
+            .select_related('author')
+            .order_by('-posted_datetime'))
     template = loader.get_template('index.html')
     context = RequestContext(request, {
         'posts': posts,

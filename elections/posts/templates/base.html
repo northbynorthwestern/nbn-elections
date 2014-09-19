@@ -1,7 +1,18 @@
 {% load staticfiles %}
 
 <html>
-<head></head>
+<head>
+
+  <title>2014 Elections | North by Northwestern</title>
+
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+  <script type="text/javascript" src="//use.typekit.net/adk4phw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
 <body>
 
 	<header class="masthead">
@@ -13,7 +24,13 @@
 		{% block content %}{% endblock %}
 	</div>
 
-	<footer></footer>
+	<footer>
+    <div class="content-wrapper">
+      <div class="credits">
+        <p><strong>Design & Development</strong>: </a>Alex Duner</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
