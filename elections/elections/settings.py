@@ -91,7 +91,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 # TinyMCE Setup
 # TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tinymce/tinymce.min.js")
 # TINYMCE_DEFAULT_CONFIG = {
