@@ -9,6 +9,6 @@ urlpatterns = patterns('',
     # url(r'^posts/', include('posts.urls')),
     # (r'^tinymce/', include('tinymce.urls')),
 
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.LandingView.as_view(), name='landing'),
     url(r'^admin/', include(admin.site.urls)),
 )
