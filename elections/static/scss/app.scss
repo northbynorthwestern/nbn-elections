@@ -1,6 +1,11 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 
-body {
-  background-color: blue;
-}
+@import '_normalize';
+
+@import '_variables';
+@import '_layout';
+
+@import '_header';
+@import '_footer';
+@import '_post';

@@ -1,0 +1,32 @@
+body {
+    background-color: transparentize($purple, 0.9);
+    -webkit-backface-visibility: hidden;
+    font-family: 'Proxima-Nova';
+}
+
+.content-wrapper {
+  @include outer-container;
+
+  @include media($large) {
+    padding-left: 75px !important;
+    padding-right: 75px !important;
+  }
+
+  padding: 1.5em;
+}
+
+main.content-wrapper {
+  margin-top: 20px;
+}
+
+.posts {
+  @include media($large) {
+    @include span-columns(8 of 12);
+  }
+  @include media($medium) {
+    @include span-columns(10 of 12);
+  }
+  @include media($small) {
+    @include span-columns(8 of 8);
+  }
+}

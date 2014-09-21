@@ -14,15 +14,20 @@
 
 </head>
 <body>
+  <div class="logo">
+    <a href="http://northbynorthwestern.com"><img src="{% static 'img/nbn-logo.png' %}" alt=""></a>
+  </div>
 
 	<header class="masthead">
-		<img src="{% static 'img/nbn-logo.png' %}" alt="">
+    <p>North by Northwestern</p>
 	</header>
-	<header class="banner"></header>
+	<header class="banner content-wrapper">
+    <h1>2014 Elections</h1>
+  </header>
 
-	<div class="content-wrapper">
+	<main class="content-wrapper">
 		{% block content %}{% endblock %}
-	</div>
+	</main>
 
 	<footer>
     <div class="content-wrapper">
