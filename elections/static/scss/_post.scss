@@ -24,7 +24,7 @@ article.post {
   h3 {
     @include serif;
     font-size: 1.375em;
-    margin-bottom: .25em;
+    margin-bottom: 0em;
 
     a {
       color: $purple;
@@ -40,6 +40,7 @@ article.post {
     font-size: .875em;
     font-weight: 700;
     margin-top: 0;
+    margin-bottom: 1em;
 
     .authors {
       margin-right: 7px;
