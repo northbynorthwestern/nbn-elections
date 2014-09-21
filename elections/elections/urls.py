@@ -10,5 +10,6 @@ urlpatterns = patterns('',
     # (r'^tinymce/', include('tinymce.urls')),
 
     url(r'^$', views.LandingView.as_view(), name='landing'),
+    url(r'^post/(?P<slug>[\w-]+)/$', views.PostView.as_view(), name='post'),
     url(r'^admin/', include(admin.site.urls)),
 )

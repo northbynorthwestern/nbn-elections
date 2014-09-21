@@ -1,10 +1,13 @@
+header a {
+  text-decoration: none;
+}
 
 .logo {
+  @include transition(all 0.5s);
   z-index: 10;
   top: 10px;
   left: 10px;
   height: $masthead-height;
-  @include transition(all 0.5s);
 
   @include media($large) {
     position: fixed;
@@ -62,8 +65,13 @@
   @include serif;
   margin-top: 20px;
   h1 {
+    margin-bottom: 0;
     margin-top: 0;
     width: 100%;
     text-align: center;
+
+    a {
+      color: #000;
+    }
   }
 }

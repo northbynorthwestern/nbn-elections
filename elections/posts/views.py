@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.views.generic import TemplateView
@@ -16,4 +16,15 @@ class LandingView(TemplateView):
                 .select_related('author')
                 .order_by('-posted_datetime'))
         context['posts'] = posts
+        return context
+
+class PostView(TemplateView):
+    template_name = 'post.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PostView, self).get_context_data(**kwargs)
+
+        post = get_object_or_404(Post, slug=self.kwargs['slug'])
+        context['post'] = post
+
         return context

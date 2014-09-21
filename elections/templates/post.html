@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<article class="post">
+  <header>
+    <h3>{{ post.title }}</h3>
+    <p class="meta">
+    {% if post.author.all|length >= 1 %}
+      By
+      <span class="authors">
+      {{ post.author.all|join:", " }}
+      </span>
+      <span class="date">{{ post.posted_datetime|date:"N j, Y" }}</span>
+    {% else %}
+      <span class="date">{{ post.posted_datetime|date:"N j, Y" }}</span>
+    {% endif %}
+    </p>
+  </header>
+  <section class="content">
+    {{ post.body }}
+  </section>
+  {% if post.state %}
+  <section class="state">
+    <span class="stateface stateface-replace stateface-{abbrev}">{{ post.stateface }}</span>
+  </section>
+  {% endif %}
+</article>
+
+{% endblock %}
