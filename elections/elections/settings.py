@@ -39,6 +39,7 @@ INSTALLED_APPS = (
 
     # tools
     # 'tinymce',
+    'localflavor',
 
     # apps
     'posts',

@@ -20,13 +20,4 @@ main.content-wrapper {
 }
 
 .posts {
-  @include media($large) {
-    @include span-columns(8 of 12);
-  }
-  @include media($medium) {
-    @include span-columns(10 of 12);
-  }
-  @include media($small) {
-    @include span-columns(8 of 8);
-  }
 }

@@ -5,26 +5,31 @@
 {% include "includes/main_polls.html" %}
 
 <div class="posts">
+<p class="info">Each week, our politics writers will update this blog with their thoughts and opinions on the latest in all of the 2014 Elections.</p>
 {% for post in posts %}
-	<article>
+	<article class="post">
 		<header>
 			<h3><a href="">{{ post.title }}</a></h3>
 			<p class="meta">
 			{% if post.author.all|length >= 1 %}
-				<span class="date">{{ post.posted_datetime }}</span> |
-				<span class="authors">
-				{% for author in post.author.all %}
-					{{ author.name }}
-				{% endfor %}
-				</span>
+				By
+        <span class="authors">
+				{{ post.author.all|join:", " }}
+        </span>
+        <span class="date">{{ post.posted_datetime|date:"N j, Y" }}</span>
 			{% else %}
-				{{ post.posted_date }}
+				<span class="date">{{ post.posted_datetime|date:"N j, Y" }}</span>
 			{% endif %}
 			</p>
 		</header>
 		<section class="content">
 			{{ post.body }}
 		</section>
+    {% if post.state %}
+    <section class="state">
+      <span class="stateface stateface-replace stateface-{abbrev}">{{ post.stateface }}</span>
+    </section>
+    {% endif %}
 	</article>
 {% endfor %}
 </div>

@@ -1,0 +1,62 @@
+article.post {
+  clear: both;
+  float: none !important;
+  padding-top: 4em;
+
+  h3 {
+    @include serif;
+    font-size: 1.375em;
+    margin-bottom: 0.25em;
+    a {
+      color: $purple;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .meta {
+    margin-top: 0;
+    font-size: 0.875em;
+    font-weight: 700;
+
+    .authors {
+      text-transform: uppercase;
+      margin-right: 7px;
+    }
+    .date {
+      font-weight: 500;
+    }
+  }
+
+  .content {
+    @include media($large) {
+      @include span-columns(8 of 12);
+    }
+    @include media($medium) {
+      @include span-columns(10 of 12);
+      padding-right: 1em;
+    }
+    @include media($small) {
+      @include span-columns(8 of 8)
+    }
+  }
+
+  .state {
+    font-size: 5em;
+    color: $purple;
+    text-align: right;
+    @include media($large) {
+      @include span-columns(2 of 12);
+    }
+    @include media($medium) {
+      @include span-columns(2 of 12);
+    }
+    @include media($small) {
+      display: none;
+    }
+
+  }
+
+}

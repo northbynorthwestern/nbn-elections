@@ -15,6 +15,5 @@ class LandingView(TemplateView):
                 .filter(status='p')
                 .select_related('author')
                 .order_by('-posted_datetime'))
-        # posts = Post.objects.all()
         context['posts'] = posts
         return context

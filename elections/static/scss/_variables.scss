@@ -8,3 +8,6 @@ $small: new-breakpoint(max-width em(400) 8);
 
 $masthead-height: 40px;
 
+@mixin serif {
+  font-family: "ff-meta-serif-web-pro", serif;
+}

@@ -1,7 +1,8 @@
 from django.db import models
 # from tinymce.models import HTMLField
-
+from localflavor.us.models import USStateField
 from datetime import datetime
+import statestyle
 
 class Author(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -24,9 +25,10 @@ class Post(models.Model):
 
     title = models.CharField(max_length=100, unique=True, null=True)
     slug = models.SlugField(max_length=100, unique=True, null=True)
+    author = models.ManyToManyField('Author', null=True, blank=True)
+    state = USStateField(null=True)
     body = models.TextField(null=True)
     posted_datetime = models.DateTimeField(auto_now_add=True, db_index=True, null=True)
-    author = models.ManyToManyField('Author', null=True, blank=True)
     status = models.CharField(max_length=1,
                             choices=STATUS_CHOICES,
                             default=DRAFT, null=True)
@@ -36,3 +38,9 @@ class Post(models.Model):
 
     def is_published(self):
         return self.status == self.PUBLISHED
+
+    @property
+    def stateface(self):
+        a = statestyle.get(self.state)
+        return a.stateface
+
