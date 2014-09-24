@@ -1,0 +1,11 @@
+{% if post.race.slug %}
+
+<div class="chart">{{ post.race.slug }}</div>
+
+<script>
+  nbn.charts.init({
+    race_slug: '{{ post.race.slug }}'
+  });
+</script>
+
+{% endif %}

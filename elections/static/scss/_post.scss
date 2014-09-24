@@ -1,4 +1,7 @@
 p.info {
+  font-weight: 600;
+  @include serif;
+
   @include media($large) {
     @include span-columns(10 of 12);
   }

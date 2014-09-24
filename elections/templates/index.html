@@ -2,10 +2,8 @@
 
 {% block content %}
 
-{% include "includes/main_polls.html" %}
-
 <div class="posts">
-<p class="info">Each week, our politics writers will update this blog with their thoughts and opinions on the latest in all of the 2014 Elections.</p>
+<p class="info">Each week, our politics writers will update this blog with their thoughts and opinions on the latest in all of the 2014 Midterm Elections.</p>
 {% for post in posts %}
 	<article class="post">
 		<header>
@@ -22,6 +20,9 @@
 			{% endif %}
 			</p>
 		</header>
+
+    {% include "includes/poll_chart.html" %}
+
 		<section class="content">
 			{{ post.body }}
 		</section>

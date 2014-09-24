@@ -1,5 +1,5 @@
 body {
-    background-color: transparentize($purple, 0.9);
+    background-color: transparentize($purple, 0.95);
     -webkit-backface-visibility: hidden;
     font-family: 'Proxima-Nova';
 }
@@ -19,5 +19,4 @@ main.content-wrapper {
   padding-top: 0;
 }
 
-.posts {
-}
+.posts { }
