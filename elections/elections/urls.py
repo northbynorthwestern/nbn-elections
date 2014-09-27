@@ -7,7 +7,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'elections.views.home', name='home'),
     # url(r'^posts/', include('posts.urls')),
-    # (r'^tinymce/', include('tinymce.urls')),
+
+    (r'^tinymce/', include('tinymce.urls')),
 
     url(r'^$', views.LandingView.as_view(), name='landing'),
     url(r'^post/(?P<slug>[\w-]+)/$', views.PostView.as_view(), name='post'),

@@ -27,7 +27,7 @@
     {% include "includes/poll_chart.html" %}
     <div class="row">
   		<section class="content">
-  			{{ post.body }}
+  			{{ post.body| safe }}
   		</section>
 	</article>
 {% endfor %}

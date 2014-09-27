@@ -1,5 +1,5 @@
 from django.db import models
-# from tinymce.models import HTMLField
+from tinymce.models import HTMLField
 from localflavor.us.models import USStateField
 from datetime import datetime
 from jsonfield import JSONField
@@ -48,9 +48,9 @@ class Post(models.Model):
     author = models.ManyToManyField('Author', null=True, blank=True)
     state = USStateField(null=True)
     race = models.ForeignKey('Race', null=True, blank=True)
-    body = models.TextField(null=True)
+    body = HTMLField(null=True)
     posted_datetime = models.DateTimeField(auto_now_add=True, db_index=True, null=True)
-    posted_datetime.editable = True
+    # posted_datetime.editable = True
     status = models.CharField(max_length=1,
                             choices=STATUS_CHOICES,
                             default=DRAFT, null=True)
