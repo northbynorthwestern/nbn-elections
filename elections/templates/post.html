@@ -16,18 +16,18 @@
       <span class="date">{{ post.posted_datetime|date:"N j, Y" }}</span>
     {% endif %}
     </p>
+    {% if post.state %}
+      <span class="state stateface stateface-replace stateface-{abbrev}">{{ post.stateface }}</span>
+    {% endif %}
   </header>
 
   {% include "includes/poll_chart.html" %}
 
-  <section class="content">
-    {{ post.body }}
-  </section>
-  {% if post.state %}
-  <section class="state">
-    <span class="stateface stateface-replace stateface-{abbrev}">{{ post.stateface }}</span>
-  </section>
-  {% endif %}
+  <div class="row">
+    <section class="content">
+      {{ post.body }}
+    </section>
+  </div>
 </article>
 
 {% endblock %}

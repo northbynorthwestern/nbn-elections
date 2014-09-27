@@ -1,6 +1,7 @@
 p.info {
   font-weight: 600;
   @include serif;
+  margin-bottom: 2.5em;
 
   @include media($large) {
     @include span-columns(10 of 12);
@@ -16,13 +17,15 @@ p.info {
 }
 
 article.post {
+  background-color: transparentize($purple, 0.8);
+  padding: 1em;
+  position: relative;
+
   clear: both;
   float: none !important;
-  padding-top: 4em;
+  margin-top: 4em;
 
-  &:first-of-type {
-    padding-top: 1em;
-  }
+  &:first-of-type { margin-top: 2.5em; }
 
   h3 {
     @include serif;
@@ -75,19 +78,16 @@ article.post {
     color: transparentize($purple, 0.2);
     font-size: 5em;
     text-align: right;
-
-    @include media($large) {
-      @include span-columns(2 of 12);
-    }
-
-    @include media($medium) {
-      @include span-columns(2 of 12);
-    }
-
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding: 0.2em;
+    overflow: visible;
+    font-weight: normal;
     @include media($small) {
       display: none;
     }
-
   }
 
 }

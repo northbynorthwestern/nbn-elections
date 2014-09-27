@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="posts">
-<p class="info">Each week, our politics writers will update this blog with their thoughts and opinions on the latest in all of the 2014 Midterm Elections.</p>
+<p class="info row">Each week, our politics writers will update this blog with their thoughts and opinions on the latest news about the 2014 Midterm Elections.</p>
 {% for post in posts %}
 	<article class="post">
 		<header>
@@ -18,19 +18,17 @@
 			{% else %}
 				<span class="date">{{ post.posted_datetime|date:"N j, Y" }}</span>
 			{% endif %}
+      {% if post.state %}
+        <span class="state stateface stateface-replace stateface-{abbrev}">{{ post.stateface }}</span>
+      {% endif %}
 			</p>
 		</header>
 
     {% include "includes/poll_chart.html" %}
-
-		<section class="content">
-			{{ post.body }}
-		</section>
-    {% if post.state %}
-    <section class="state">
-      <span class="stateface stateface-replace stateface-{abbrev}">{{ post.stateface }}</span>
-    </section>
-    {% endif %}
+    <div class="row">
+  		<section class="content">
+  			{{ post.body }}
+  		</section>
 	</article>
 {% endfor %}
 </div>

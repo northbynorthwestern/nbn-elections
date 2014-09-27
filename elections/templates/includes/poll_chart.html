@@ -1,10 +1,31 @@
 {% if post.race.slug %}
 
-<div class="chart">{{ post.race.slug }}</div>
+<div class="chart" data-race="{{ post.race.slug_without_number }}">
+  <div class="race_info">
+    <p class="title">{{ post.race.title }}</p>
+    <div class="candidates">
+      {% for candidate in post.race.estimates %}
+        {% if candidate.party != "none" %}
+          <div class="candidate {{ candidate.party }} ">
+            <div class="square"></div>
+            <p>{{ candidate.first_name}} {{ candidate.last_name }} <span class="party">({{ candidate.party }})</span></p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="graph"></div>
+
+  <div class="chart_info">Data compiled on {{ post.race.last_updated|date:"N j, Y" }} from {{ post.race.poll_count }} polls by <a href="{{ post.race.url }}">Pollster</a>.</div>
+
+</div>
 
 <script>
   nbn.charts.init({
-    race_slug: '{{ post.race.slug }}'
+    race_slug: '{{ post.race.slug }}',
+    slug_without_number: '{{ post.race.slug_without_number }}',
+    post_date: '{{ post.posted_datetime|date:"Y-M-d" }}'
   });
 </script>
 
