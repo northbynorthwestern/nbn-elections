@@ -14,6 +14,8 @@ function handleD3(url, options) {
 
   d3.json(url, function(json) { drawChart(json, options); });
 
+  smallDate = d3.time.format("%b");
+
   function drawChart(json, options) {
     var DATA = processData(json);
 
@@ -29,6 +31,7 @@ function handleD3(url, options) {
 
     var xAxis = d3.svg.axis()
       .scale(x)
+      .tickFormat(smallDate)
       .orient("bottom");
 
     var yAxis = d3.svg.axis()
@@ -92,8 +95,6 @@ function handleD3(url, options) {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .tickFormat(formatPercent);
-
     }
 
     function processData(json) {
