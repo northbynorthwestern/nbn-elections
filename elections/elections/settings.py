@@ -101,10 +101,10 @@ STATICFILES_DIRS = (
 
 # TinyMCE Setup
 # TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tinymce/tinymce.min.js")
-# TINYMCE_DEFAULT_CONFIG = {
-#     'plugins': "table,spellchecker,paste,searchreplace",
-#     'theme': "advanced",
-#     'cleanup_on_startup': True,
-#     'custom_undo_redo_levels': 10,
-# }
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "spellchecker,paste,searchreplace",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
 
