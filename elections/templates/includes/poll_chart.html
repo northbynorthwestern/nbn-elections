@@ -1,6 +1,6 @@
 {% if post.race.slug %}
 
-<div class="chart" data-race="{{ post.race.slug_without_number }}">
+<div class="chart" id="chart-{{ post.id }}" data-race="{{ post.race.slug_without_number }}">
   <div class="race_info">
     <p class="title">{{ post.race.title }}</p>
     <div class="candidates">
@@ -25,6 +25,7 @@
   nbn.charts.init({
     race_slug: '{{ post.race.slug }}',
     slug_without_number: '{{ post.race.slug_without_number }}',
+    post_id: '{{ post.id }}',
     post_date: '{{ post.posted_datetime|date:"Y-M-d" }}'
   });
 </script>

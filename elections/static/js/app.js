@@ -53,7 +53,7 @@ function handleD3(url, options) {
       x.domain([getLowerXDomain(DATA), getUpperXDomain(DATA)]);
       y.domain([getLowerYDomain(DATA), getUpperYDomain(DATA)]);
 
-      var svg = d3.select("[data-race=" + options.slug_without_number + "] .graph").append("svg")
+      var svg = d3.select("#chart-"+ options.post_id +"[data-race=" + options.slug_without_number + "] .graph").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
       .append("g")
