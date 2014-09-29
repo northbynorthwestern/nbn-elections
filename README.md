@@ -27,13 +27,19 @@ And install the requirements:
 pip install -r requirements.txt
 ```
 
+Now create the database (this assumes you have postgres installed) and run Postgres:
+
+```bash
+createdb nbn_elections
+pgup
+```
+
 You should be able to run your first `migrate` now:
 
 ```bash
 python elections/manage.py makemigrations
 python elections/manage.py migrate
 ```
-
 
 To get the political race models filled, run:
 
