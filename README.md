@@ -50,14 +50,14 @@ export DJANGO_SETTINGS_MODULE=elections.config.settings.development
 You should be able to run your first `migrate` now:
 
 ```bash
-python elections/manage.py makemigrations
-python elections/manage.py migrate
+django-admin makemigrations
+django-admin migrate
 ```
 
 To get the political race models filled, run:
 
 ```bash
-python elections/manage.py create_races
+django-admin create_races
 ```
 
 You will also need to install Grunt and other Node dependencies to compile the Sass (this assumes you already have `node` and `grunt-cli` installed).
@@ -70,7 +70,7 @@ grunt dev
 Then, you should be able to run the server:
 
 ```bash
-python elections/manage.py runserver
+django-admin runserver
 ```
 
 

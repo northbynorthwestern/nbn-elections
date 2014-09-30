@@ -20,7 +20,7 @@ STATIC_ROOT = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'uc8t9r!kjkqj$zqml77k=&jn=q3gh@@_4^6durlfu(xy!ro3m&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
