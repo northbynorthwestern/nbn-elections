@@ -21,6 +21,12 @@ Then, create the virtual environment for your project.
 mkvirtualenv nbn-elections
 add2virtualenv .
 ```
+
+Add this to your `~/.virtualenvs/nbn-elections/bin/postactivate` file:
+```bash
+export DJANGO_SETTINGS_MODULE=elections.config.settings.development
+```
+
 And install the requirements:
 
 ```bash
