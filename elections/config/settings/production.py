@@ -44,7 +44,7 @@ INSTALLED_APPS = (
     'elections.posts',
 
     # local
-    'debug_toolbar',
+    #'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
