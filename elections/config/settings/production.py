@@ -10,8 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-STATIC_ROOT = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -20,7 +19,7 @@ STATIC_ROOT = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'uc8t9r!kjkqj$zqml77k=&jn=q3gh@@_4^6durlfu(xy!ro3m&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = FALSE
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -42,7 +41,7 @@ INSTALLED_APPS = (
     'localflavor',
 
     # apps
-    'posts',
+    'elections.posts',
 
     # local
     'debug_toolbar',
@@ -60,7 +59,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'elections.urls'
 
-WSGI_APPLICATION = 'elections.wsgi.application'
+WSGI_APPLICATION = 'elections.config.app.application'
 
 
 # Database
@@ -94,9 +93,11 @@ TEMPLATE_DIRS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'elections/static')
+
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    STATIC_ROOT,
 )
 
 # TinyMCE Setup
