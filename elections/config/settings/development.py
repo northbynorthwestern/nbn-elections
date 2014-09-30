@@ -86,18 +86,16 @@ USE_L10N = True
 USE_TZ = True
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'elections/templates'),
 )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'elections/static')
-
-
+STATIC_ROOT = "/var/www/nbn-elections/static/"
 STATICFILES_DIRS = (
-    STATIC_ROOT,
+    os.path.join(BASE_DIR, 'elections/static'),
 )
 
 # TinyMCE Setup

@@ -67,6 +67,12 @@ npm install
 grunt dev
 ```
 
+Do some things for Django static files:
+```
+sudo mkdir -p /var/www/nbn-elections/static/ && sudo chmod -R 777 /var/www/nbn-elections/static/
+django-admin collectstatic
+```
+
 Then, you should be able to run the server:
 
 ```bash
