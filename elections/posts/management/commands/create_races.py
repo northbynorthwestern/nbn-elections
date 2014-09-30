@@ -1,28 +1,35 @@
 from django.core.management.base import BaseCommand, CommandError
-from posts.models import Race
 import requests
 
+from elections.posts.models import Race
 
 class Command(BaseCommand):
-    HOUSE_URL= 'http://elections.huffingtonpost.com/pollster/api/charts?topic=2014-house'
-    SENATE_URL = 'http://elections.huffingtonpost.com/pollster/api/charts?topic=2014-senate'
-    GOVERNOR_URL = 'http://elections.huffingtonpost.com/pollster/api/charts?topic=2014-governor'
+    def handle(self, *args, **kwargs):
+        HOUSE_URL= 'http://elections.huffingtonpost.com/pollster/api/charts?topic=2014-house'
+        SENATE_URL = 'http://elections.huffingtonpost.com/pollster/api/charts?topic=2014-senate'
+        GOVERNOR_URL = 'http://elections.huffingtonpost.com/pollster/api/charts?topic=2014-governor'
 
-    house = requests.get(HOUSE_URL)
-    senate = requests.get(SENATE_URL)
-    governor = requests.get(GOVERNOR_URL)
+        house = requests.get(HOUSE_URL)
+        senate = requests.get(SENATE_URL)
+        governor = requests.get(GOVERNOR_URL)
 
-    races = house.json() + senate.json() + governor.json()
+        races = house.json() + senate.json() + governor.json()
 
-    Race.objects.all().delete()
+        print "Updating %s races" % len(races)
 
-    for race in races:
-        r = Race(
-            title=race['title'],
-            slug=race['slug'],
-            poll_count=race['poll_count'],
-            url=race['url'],
-            last_updated=race['last_updated'],
-            estimates=race['estimates']
-            )
-        r.save()
+        Race.objects.all().delete()
+
+        for race in races:
+            print race['title']
+
+            # Remove the keys from the race dictionary that don't map to a model attribute.
+            for k in ['election_date', 'short_title', 'topic', 'state']:
+                del race[k]
+
+            # It's a sneaky Python trick, but if the dictionary keys precisely match your model
+            # objects, you can unpack a dictionary to keyword arguments like this:
+            #
+            #     Class(**dictionary)
+            #
+            # Awesome, right?
+            Race(**race).save()
