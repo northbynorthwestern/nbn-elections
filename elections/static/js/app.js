@@ -76,11 +76,9 @@ function handleD3(url, options) {
           else if (a.toLowerCase().charAt(0) == 'r') {return 'red'; }
           else { return 'green'; }
         })
-        .attr("opacity", .5)
+        .attr("opacity", 0.5)
         .attr("stroke-width", 1.5)
-        .attr("fill", "none")
-
-
+        .attr("fill", "none");
 
       svg.append("g")
         .attr("class", "x axis")
@@ -94,18 +92,21 @@ function handleD3(url, options) {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
-        .style("text-anchor", "end")
+        .style("text-anchor", "end");
     }
 
     function processData(json) {
       data = [];
+      console.log(json);
 
       for (var i = 0; i < json.estimates.length; i++) {
-        json.estimates[i].estimates_by_date = []
-        data.push(json.estimates[i])
+        json.estimates[i].estimates_by_date = [];
+        data.push(json.estimates[i]);
 
         for (var j= 0; j < json.estimates_by_date.length; j++) {
-          if (json.estimates_by_date[j].estimates[i].choice != "Undecided") {
+            if ((json.estimates_by_date[j].estimates[i]) &&
+                (json.estimates_by_date[j].estimates[i].choice != "Undecided") &&
+                (json.estimates_by_date[j].estimates[i].choice != "Other")) {
             data[i].estimates_by_date.push(
               [new Date(json.estimates_by_date[j].date.replace('-', ' ')),
               json.estimates_by_date[j].estimates[i].value]
@@ -113,6 +114,7 @@ function handleD3(url, options) {
           }
         };
       }
+
       return data
     }
 

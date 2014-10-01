@@ -18,7 +18,7 @@ p.info {
 
 article.post {
   background-color: transparentize($purple, 0.8);
-  padding: 1em;
+  padding: 2em;
   position: relative;
 
   clear: both;
@@ -82,8 +82,8 @@ article.post {
     font-size: 5em;
     text-align: right;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0.2em;
+    right: 0.2em;
     display: block;
     padding: 0.2em;
     overflow: visible;

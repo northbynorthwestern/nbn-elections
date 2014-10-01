@@ -61,6 +61,9 @@ ROOT_URLCONF = 'elections.urls'
 
 WSGI_APPLICATION = 'elections.config.app.application'
 
+ADMINS = (
+    ('Alex Duner', 'asduner@gmail.com'),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -77,7 +80,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 

@@ -5,7 +5,7 @@
     <p class="title">{{ post.race.title }}</p>
     <div class="candidates">
       {% for candidate in post.race.estimates %}
-        {% if candidate.party != "none" %}
+        {% if candidate.party %}
           <div class="candidate {{ candidate.party }} ">
             <div class="square"></div>
             <p>{{ candidate.first_name}} {{ candidate.last_name }} <span class="party">({{ candidate.party }})</span></p>
