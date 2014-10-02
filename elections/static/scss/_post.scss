@@ -42,6 +42,11 @@ article.post {
     }
   }
 
+  a {
+    color: $purple;
+    text-decoration: underline;
+  }
+
   .meta {
     font-size: .875em;
     font-weight: 700;
