@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     # tools
     'tinymce',
     'localflavor',
-    'django-storages',
+    'storages',
 
     # apps
     'elections.posts',
@@ -98,8 +98,6 @@ TEMPLATE_DIRS = (
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-
-import django-storages
 
 STATIC_ROOT = '/static'
 STATIC_URL = 'http://nbn-elections.s3.amazonaws.com/static/'
