@@ -72,6 +72,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'nbn_elections',
+        'HOST': ''
     }
 }
 
