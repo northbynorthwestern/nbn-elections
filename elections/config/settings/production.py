@@ -99,6 +99,8 @@ TEMPLATE_DIRS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+import django-storages
+
 STATIC_ROOT = '/static'
 STATIC_URL = 'http://nbn-elections.s3.amazonaws.com/static/'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
