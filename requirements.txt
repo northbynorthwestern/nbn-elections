@@ -28,3 +28,4 @@ requests==2.4.1
 sqlparse==0.1.11
 tornado==4.0.1
 wsgiref==0.1.2
+boto
