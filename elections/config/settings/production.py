@@ -74,7 +74,7 @@ DATABASES = {
         'NAME': 'nbn_elections',
         'USER': 'nbn_elections',
         # 'PASSWORD': settings_secret.DATABASE_PASSWORD,
-        'HOST': '127.0.0.1'
+        # 'HOST': '127.0.0.1'
     }
 }
 
