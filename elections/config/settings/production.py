@@ -100,7 +100,7 @@ TEMPLATE_DIRS = (
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_ROOT = '/static'
-STATIC_URL = 'http://nbn-housing.s3.amazonaws.com/static/'
+STATIC_URL = 'http://nbn-elections.s3.amazonaws.com/static/'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
