@@ -105,6 +105,15 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'elections/static'),
 )
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', None)
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', None)
+AWS_STORAGE_BUCKET_NAME = 'nbn-elections'
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_URL_PROTOCOL = 'http:'
+AWS_S3_SECURE_URLS = False
+
 # TinyMCE Setup
 # TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tinymce/tinymce.min.js")
 TINYMCE_DEFAULT_CONFIG = {
