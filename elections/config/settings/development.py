@@ -70,8 +70,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'nbn_elections',
+        'USER': 'nbn_elections',
+        # 'PASSWORD': settings_secret.DATABASE_PASSWORD,
+        'HOST': '127.0.0.1'
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
