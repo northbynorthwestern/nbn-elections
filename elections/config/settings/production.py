@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     # tools
     'tinymce',
     'localflavor',
+    'django-storages',
 
     # apps
     'elections.posts',
