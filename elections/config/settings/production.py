@@ -115,7 +115,7 @@ AWS_S3_SECURE_URLS = False
 # TinyMCE Setup
 TINYMCE_JS_URL = 'http://tinymce.cachefly.net/4.0/tinymce.min.js'
 TINYMCE_DEFAULT_CONFIG = {
-    'plugins': "spellchecker,paste,searchreplace",
+    'plugins': "",
     'theme': "advanced",
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 10,
