@@ -46,7 +46,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100, unique=True, null=True)
     slug = models.SlugField(max_length=100, unique=True, null=True)
     author = models.ManyToManyField('Author', null=True, blank=True)
-    state = USStateField(null=True)
+    state = USStateField(null=True, blank=True)
     race = models.ForeignKey('Race', null=True, blank=True)
     body = HTMLField(null=True)
     posted_datetime = models.DateTimeField(auto_now_add=True, db_index=True, null=True)
