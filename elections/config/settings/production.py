@@ -113,7 +113,7 @@ AWS_S3_URL_PROTOCOL = 'http:'
 AWS_S3_SECURE_URLS = False
 
 # TinyMCE Setup
-# TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tinymce/tinymce.min.js")
+TINYMCE_JS_URL = os.path.join(STATIC_URL, "js/tinymce/tinymce.min.js")
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "spellchecker,paste,searchreplace",
     'theme': "advanced",
