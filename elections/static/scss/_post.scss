@@ -18,7 +18,11 @@ p.info {
 
 article.post {
   background-color: transparentize($purple, 0.8);
-  padding: 2em;
+
+  @include media($large) { padding: 2em; }
+  @include media($medium) { padding: 1em; }
+  @include media($small) { padding: 0.75em; }
+
   position: relative;
 
   clear: both;
@@ -30,7 +34,8 @@ article.post {
   h3 {
     @include serif;
     font-size: 1.375em;
-    margin-bottom: 0em;
+    margin-bottom: 0.25em;
+    line-height: 1.1;
 
     a {
       color: $purple;

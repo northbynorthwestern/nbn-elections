@@ -3,11 +3,12 @@ nbn.charts = nbn.charts || {};
 
 nbn.charts.init = function(opts) {
   options = opts;
-  proxyUrl = 'http://www.northbynorthwestern.com/elections/proxy/' + encodeURIComponent(options.race_slug);
+  proxyUrl = '/elections/proxy/' + encodeURIComponent(options.race_slug);
   handleD3(proxyUrl, options);
 };
 
 function handleD3(url, options) {
+  console.log(options);
 
   $width = $('.chart .graph').width();
   $height = $('.chart .graph').height();
@@ -18,6 +19,7 @@ function handleD3(url, options) {
 
   function drawChart(json, options) {
     var DATA = processData(json);
+    console.log(DATA);
 
     var margin = {top: 15, right: 15, bottom: 20, left: 30};
     var width = $width - margin.left - margin.right;
@@ -68,7 +70,7 @@ function handleD3(url, options) {
 
       var path = candidates.append("path")
         .attr("class", "line")
-        .attr("d", function(d) { return line(d.estimates_by_date); })
+        .attr("d", function(d) { console.log(d.estimates_by_date); return line(d.estimates_by_date); })
         .attr("stroke", function(d) {
           a = d.party || d.choice;
 
@@ -108,7 +110,7 @@ function handleD3(url, options) {
                 (json.estimates_by_date[j].estimates[i].choice != "Undecided") &&
                 (json.estimates_by_date[j].estimates[i].choice != "Other")) {
             data[i].estimates_by_date.push(
-              [new Date(json.estimates_by_date[j].date.replace('-', ' ')),
+              [new Date(json.estimates_by_date[j].date),
               json.estimates_by_date[j].estimates[i].value]
             )
           }

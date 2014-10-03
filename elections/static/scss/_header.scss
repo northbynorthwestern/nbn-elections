@@ -52,6 +52,8 @@ header a {
   top: 15px;
   left: 0;
 
+  margin-bottom: 1em;
+
   p {
     height: 100%;
     margin-top: 10%;
@@ -67,6 +69,7 @@ header a {
   h1 {
     margin-bottom: 0;
     margin-top: 0;
+    @include media($small) { margin-top: 0.5em; }
     width: 100%;
     text-align: center;
 
