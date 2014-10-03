@@ -10,5 +10,5 @@ urlpatterns = patterns('',
     url(r'^elections/2014/post/(?P<slug>[\w-]+)/$', views.PostView.as_view(), name='post'),
     url(r'^elections/2014/', views.LandingView.as_view(), name='landing'),
     url(r'^elections/proxy/(?P<race>.*)/', views.ProxyView.as_view(), name='proxy'),
-    url(r'^elections/', RedirectView.as_view(url='/elections/2014/'), name='redirect-to-landing'),
+    url(r'^elections/$', RedirectView.as_view(url='/elections/2014/'), name='redirect-to-landing'),
 )
