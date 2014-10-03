@@ -3,7 +3,7 @@ nbn.charts = nbn.charts || {};
 
 nbn.charts.init = function(opts) {
   options = opts;
-  proxyUrl = '/proxy/' + encodeURIComponent(options.race_slug);
+  proxyUrl = '/elections/proxy/' + encodeURIComponent(options.race_slug);
   handleD3(proxyUrl, options);
 };
 
