@@ -49,8 +49,7 @@ class Post(models.Model):
     state = USStateField(null=True, blank=True)
     race = models.ForeignKey('Race', null=True, blank=True)
     body = HTMLField(null=True)
-    posted_datetime = models.DateTimeField(auto_now_add=True, db_index=True, null=True)
-    # posted_datetime.editable = True
+    posted_datetime = models.DateTimeField(db_index=True, editable=True, null=True)
     status = models.CharField(max_length=1,
                             choices=STATUS_CHOICES,
                             default=DRAFT, null=True)

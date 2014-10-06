@@ -45,3 +45,12 @@ class ProxyView(View):
     def handle_response(self, url):
         r = requests.get(url)
         return HttpResponse(json.dumps(r.json()), content_type="application/json")
+
+
+class Handle404View(TemplateView):
+    template_name = '404.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Handle404View, self).get_context_data(**kwargs)
+        return context
+

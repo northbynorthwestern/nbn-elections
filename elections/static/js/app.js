@@ -8,7 +8,6 @@ nbn.charts.init = function(opts) {
 };
 
 function handleD3(url, options) {
-  console.log(options);
 
   $width = $('.chart .graph').width();
   $height = $('.chart .graph').height();
@@ -19,7 +18,6 @@ function handleD3(url, options) {
 
   function drawChart(json, options) {
     var DATA = processData(json);
-    console.log(DATA);
 
     var margin = {top: 15, right: 15, bottom: 20, left: 30};
     var width = $width - margin.left - margin.right;
@@ -52,7 +50,7 @@ function handleD3(url, options) {
 
       var formatPercent = d3.format("%");
 
-      x.domain([getLowerXDomain(DATA), getUpperXDomain(DATA)]);
+      x.domain([getLowerXDomain(DATA), new Date(options.post_date)]);
       y.domain([getLowerYDomain(DATA), getUpperYDomain(DATA)]);
 
       var svg = d3.select("#chart-"+ options.post_id +"[data-race=" + options.slug_without_number + "] .graph").append("svg")
@@ -70,7 +68,7 @@ function handleD3(url, options) {
 
       var path = candidates.append("path")
         .attr("class", "line")
-        .attr("d", function(d) { console.log(d.estimates_by_date); return line(d.estimates_by_date); })
+        .attr("d", function(d) { return line(d.estimates_by_date); })
         .attr("stroke", function(d) {
           a = d.party || d.choice;
 
@@ -94,12 +92,12 @@ function handleD3(url, options) {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", ".71em")
-        .style("text-anchor", "end");
+        .style("text-anchor", "end")
+        .text("Chance of Victory");
     }
 
     function processData(json) {
       data = [];
-      console.log(json);
 
       for (var i = 0; i < json.estimates.length; i++) {
         json.estimates[i].estimates_by_date = [];
