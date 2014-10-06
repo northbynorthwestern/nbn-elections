@@ -20,11 +20,11 @@ SECRET_KEY = os.environ.get('ELECTIONS_DJANGO_SECRET_KEY', None)
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
