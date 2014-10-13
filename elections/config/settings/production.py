@@ -113,7 +113,7 @@ AWS_S3_URL_PROTOCOL = 'http:'
 AWS_S3_SECURE_URLS = False
 
 # TinyMCE Setup
-TINYMCE_JS_URL = 'http://nbn-elections.s3.amazonaws.com/js/tinymce/tinymce.min.js'
+TINYMCE_JS_URL = 'https://nbn-elections.s3.amazonaws.com/static/tiny_mce/tiny_mce.js'
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "",
     'theme': "advanced",
